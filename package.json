@@ -1,0 +1,27 @@
+{
+  "name": "gladys-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "copy-files-from-to",
+    "scss": "node-sass --output-style compressed --include-path node_modules scss/main.scss -o css",
+    "scss:watch": "nodemon -e scss -x \"npm run scss\"",
+    "build": "npm run copy && npm run scss"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "copy-files-from-to": "^3.8.0",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  },
+  "copyFiles": [
+    {
+        "from": "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+        "to": "scripts/bootstrap.js"
+    }
+  ]
+}
